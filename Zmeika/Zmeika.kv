@@ -1,0 +1,48 @@
+<Menu>:
+    canvas:
+        Color:
+            rgba: (90/255,179/255,87/255, 1)#трава rgba: (90, 179, 87, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation:'vertical'
+        spacing:'50dp'
+        padding:'30dp'
+        Label:
+            text: 'Приветствую тебя в игре Змейка!\n                Хочешь начать?'
+            font_name: 'comic.ttf'
+            font_size: '48sp'
+
+        # TextInput:
+        #     multiline: False
+        #     focus: True
+        #     font_size: '30sp'
+        Button:
+            text: 'Да'
+            size_hint: 0.5, 0.4
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            on_press: root.manager.current = 'game'
+            font_name: 'comic.ttf'
+
+<Pos>:
+    canvas:
+        Color:
+            rgba: (90/255,179/255,87/255, 1)
+        Rectangle:
+            size: sp(50), sp(50)
+            pos: self.pos
+    
+<Game>:
+    canvas:
+        Color:
+            rgba: (34/255,120/255,31/255, 1)
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Собрано ямлок:'
+            size_hint_y: 0.1
+            font_name: 'comic.ttf'
+        FloatLayout:
+            Pos:
